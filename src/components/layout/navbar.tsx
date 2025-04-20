@@ -76,9 +76,7 @@ export function Navbar() {
                   </DropdownMenu> 
             
             
-            <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">
-              Blog
-            </Link>
+           
            
         
         </div>

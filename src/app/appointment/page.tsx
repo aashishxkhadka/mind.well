@@ -124,8 +124,19 @@ function ClientSearchParams() {
 
   const timeSlots = watchDate ? getTimeSlots(watchDate) : [];
 
-  const user = jwtDecode(localStorage.getItem("token") || "");
-
+  let user = null;
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        user = jwtDecode(token);
+      } catch (error) {
+        console.error("Error decoding token:", error);
+      }
+    }
+  }
+ // const user = jwtDecode(localStorage.getItem("token") || "");
+if (!user) router.push("/login")
   const onSubmit = async (data: AppointmentFormValues) => {
     console.log("submitting form...");
     createAppointment.mutate({
