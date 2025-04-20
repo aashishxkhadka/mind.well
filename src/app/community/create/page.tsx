@@ -12,10 +12,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Checkbox } from "@/components/ui/checkbox"
 import { useMutation } from "@tanstack/react-query"
 import axios from "axios"
-import getUser from "@/lib/getuser"
 import { toast } from "sonner"
 import { jwtDecode } from "jwt-decode"
 
@@ -39,27 +37,39 @@ export default function CreatePostPage() {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
-    watch,
   } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       title: "",
       content: "",
     },
   })
 
-  const user = jwtDecode(localStorage.getItem("token") as string)
-
+  // const user = jwtDecode(localStorage.getItem("token") as string)
+  let user = null;
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        user = jwtDecode(token);
+      } catch (error) {
+        console.error("Error decoding token:", error);
+      }
+    }
+  }
 
   const createPost = useMutation({
     mutationFn: async (data: FormValues) => {
+      //@ts-expect-error user id may not be required here but its working
       const response = await axios.post("/api/post", { ...data, authorId: user?.id })
       return response.data
     },
     onSuccess: () => {
-      toast.success("Post created successfully"),
-        router.push("/community")
+      router.push("/community")
+      return toast.success("Post created successfully")
+    },
+    onError: () => {
+      toast.error("Failed to create post")
     }
   })
   const onSubmit = async (data: FormValues) => {

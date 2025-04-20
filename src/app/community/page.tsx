@@ -14,12 +14,27 @@ import { jwtDecode } from "jwt-decode"
 
 
 export default function CommunityPage() {
-  const { data: posts, isLoading, error } = useQuery({
+  const { data: posts, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: () => axios.get("/api/post").then((res) => res.data),
   })
 
-  const user = jwtDecode(localStorage.getItem("token") || "")
+  let user = null;
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        user = jwtDecode(token);
+      } catch (error) {
+        console.error("Error decoding token:", error);
+      }
+    }
+  }
+  // const user = jwtDecode(localStorage.getItem("token") || "")
+
+  if (isLoading) {
+    return <div className="h-[80vh]">Loading...</div>
+  }
 
   return (
     <div className="container py-8 px-4 mx-auto">
@@ -37,7 +52,7 @@ export default function CommunityPage() {
         </div>
 
         <div className="grid gap-4">
-          {posts?.map((post) => (
+          {posts?.map((post: any) => (
             <Link key={post.id} href={`/community/${post.id}`} className="block">
               <Card className="hover:bg-muted/50 transition-colors">
                 <CardHeader className="pb-2">

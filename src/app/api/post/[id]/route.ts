@@ -1,10 +1,12 @@
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+type Params = Promise<{ id: string }>
+export async function GET(request: NextRequest, { params }: { params: Params }) {
+  const { id } = await params
   const post = await prisma.post.findUnique({
     where: {
-      id: parseInt(params.id),
+      id: parseInt(id),
     },
     include: {
       author: true,
@@ -18,11 +20,12 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
   return NextResponse.json(post)
 }
 
-export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
+export async function POST(request: NextRequest, { params }: { params: Params }) {
   const body = await request.json()
   const { content, authorId } = body
+  const { id } = await params
   const post = await prisma.post.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: parseInt(id) },
   })
 
   if (!post) {

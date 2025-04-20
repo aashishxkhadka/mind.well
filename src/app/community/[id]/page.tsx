@@ -9,8 +9,10 @@ import prisma from "@/lib/prisma"
 import { CommentForm } from "@/components/comment-form"
 
 
-export default async function PostPage({ params }: { params: { id: string } }) {
-  const postId = await parseInt(params.id)
+type Params = Promise<{ id: string }>
+export default async function PostPage({ params }: { params: Params }) {
+  const { id } = await params
+  const postId = await parseInt(id)
   const post = await prisma.post.findUnique({
     where: {
       id: postId,
@@ -88,7 +90,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-2 mb-2">
                       <Avatar className="h-6 w-6">
-                        <AvatarImage src={comment?.author?.image || "/placeholder.svg"} alt={comment?.author?.name} />
+                        <AvatarImage src={comment?.author?.avatar|| "/placeholder.svg"} alt={comment.author.name || ""} />
                         <AvatarFallback>
                           <User className="h-4 w-4" />
                         </AvatarFallback>

@@ -43,8 +43,8 @@ export default function LoginPage() {
       localStorage.setItem("token", data.data.token)
       setIsLoading(false)
       toast.success("Login successful!")
-      router.push("/profile")
-      router.refresh()
+      
+      window.location.href="/"
     },
     onError: (error) => {
       setIsLoading(false)

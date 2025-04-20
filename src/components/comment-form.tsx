@@ -42,6 +42,7 @@ export function CommentForm({ postId }: CommentFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       content: "",
+      //@ts-expect-error user id may not be required here but its working
       authorId: user?.id,
     },
   })

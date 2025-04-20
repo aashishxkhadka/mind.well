@@ -1,8 +1,9 @@
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest, { params }: { params: { doctorId: string } }) {
-  const { doctorId } = await params
+type Params = Promise<{ doctorId: string }>
+export async function GET(request: NextRequest, {params}: { params: Params }) {
+  const { doctorId } = (await params)
   const appointment = await prisma.appointment.findMany({
     where: {
       OR: [
