@@ -140,7 +140,7 @@ export default function MissionPage() {
         </section>
       </main>
 
-      <Footer/>
+      
     </div>
   )
 }

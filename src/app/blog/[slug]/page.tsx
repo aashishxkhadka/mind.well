@@ -172,7 +172,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </article>
       </main>
 
-      <Footer />
+      
     </div>
   )
 }

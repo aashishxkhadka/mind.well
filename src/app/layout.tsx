@@ -30,7 +30,7 @@ export default function RootLayout({
             <Navbar />
             <main className="mx-auto">{children}</main>
             <AIChatButton />
-            <Toaster/>
+            <Toaster position="top-right"/>
             <Footer /> 
           </div>
         </ThemeProvider>
