@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Clock, Phone, CheckCircle, Verified } from "lucide-react"
+import { MapPin, Clock, Phone,  Verified } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -105,7 +105,7 @@ export default function DoctorsPage() {
               </CardContent>
               <CardFooter className="p-4 pt-0 flex gap-2">
                 <Button variant="outline" className="flex-1" asChild>
-                View Profile
+                  <Link href={`/doctors/${doctor.id}`}>View Profile</Link>
                 </Button>
                 <Button className="flex-1" asChild>
                    <Link href={`/appointment?doctor=${doctor.id}`}>Book Session</Link>
