@@ -124,24 +124,14 @@ function ClientSearchParams() {
 
   const timeSlots = watchDate ? getTimeSlots(watchDate) : [];
 
-  let user = null;
-  if (typeof window !== "undefined") {
-    const token = localStorage.getItem("token");
-    if (token) {
-      try {
-        user = jwtDecode(token);
-      } catch (error) {
-        console.error("Error decoding token:", error);
-      }
-    }
-  }
- // const user = jwtDecode(localStorage.getItem("token") || "");
-if (!user) router.push("/login")
+  const user = jwtDecode(localStorage.getItem("token") || "");
+
   const onSubmit = async (data: AppointmentFormValues) => {
     console.log("submitting form...");
     createAppointment.mutate({
       ...data,
-      time: new Date(data.time.toISOString()),
+      //@ts-expect-error patient id may not be required here but its working
+      start: new Date(data.time.toISOString()),
       //@ts-expect-error patient id may not be required here but its working
       patientId: user?.id || 0,
     });

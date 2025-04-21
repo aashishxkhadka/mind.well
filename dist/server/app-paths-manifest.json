@@ -2,9 +2,13 @@
   "/(auth)/login/page": "app/(auth)/login/page.js",
   "/(auth)/register/page": "app/(auth)/register/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/appointment/[doctorId]/route": "app/api/appointment/[doctorId]/route.js",
-  "/api/profile/[id]/route": "app/api/profile/[id]/route.js",
+  "/about/page": "app/about/page.js",
+  "/community/page": "app/community/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/doctors/page": "app/doctors/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/mission/page": "app/mission/page.js",
   "/page": "app/page.js",
-  "/profile/page": "app/profile/page.js"
+  "/services/page": "app/services/page.js",
+  "/terms/page": "app/terms/page.js"
 }
