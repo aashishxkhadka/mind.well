@@ -1,9 +1,10 @@
 {
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/register/page": "app/(auth)/register/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/doctors/route": "app/api/doctors/route.js",
-  "/api/post/route": "app/api/post/route.js",
-  "/community/page": "app/community/page.js",
-  "/doctors/page": "app/doctors/page.js",
+  "/api/appointment/[doctorId]/route": "app/api/appointment/[doctorId]/route.js",
+  "/api/profile/[id]/route": "app/api/profile/[id]/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js"
 }
