@@ -102,7 +102,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/aashishkhadka/Documents/Mindwell/Mindwell",
+    "outputFileTracingRoot": "/Users/aashishkhadka/Documents/Mindwell",
     "experimental": {
       "nodeMiddleware": false,
       "cacheLife": {
@@ -285,10 +285,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/aashishkhadka/Documents/Mindwell/Mindwell"
+      "root": "/Users/aashishkhadka/Documents/Mindwell"
     }
   },
-  "appDir": "/Users/aashishkhadka/Documents/Mindwell/Mindwell",
+  "appDir": "/Users/aashishkhadka/Documents/Mindwell",
   "relativeAppDir": "",
   "files": [
     "dist/routes-manifest.json",

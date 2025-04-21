@@ -1,4 +1,4 @@
-// File: /Users/aashishkhadka/Documents/Mindwell/Mindwell/src/app/appointment/page.tsx
+// File: /Users/aashishkhadka/Documents/Mindwell/src/app/appointment/page.tsx
 import * as entry from '../../../../src/app/appointment/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

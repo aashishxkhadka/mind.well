@@ -24,7 +24,7 @@ export function Navbar() {
 
   return (
     <header className="border-b bg-background">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between">
           <Logo />
         <nav className="hidden md:flex items-center gap-2">
           <Button variant="ghost" size="sm" asChild>
@@ -76,7 +76,7 @@ export function Navbar() {
                   </DropdownMenu> 
             
             
-           
+          
            
         
         </div>

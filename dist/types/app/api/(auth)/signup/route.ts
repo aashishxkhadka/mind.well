@@ -1,4 +1,4 @@
-// File: /Users/aashishkhadka/Documents/Mindwell/Mindwell/src/app/api/(auth)/signup/route.ts
+// File: /Users/aashishkhadka/Documents/Mindwell/src/app/api/(auth)/signup/route.ts
 import * as entry from '../../../../../../src/app/api/(auth)/signup/route.js'
 import type { NextRequest } from 'next/server.js'
 

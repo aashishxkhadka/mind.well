@@ -8,8 +8,8 @@ interface LogoProps {
 export function Logo({ className }: LogoProps) {
   return (
     <Link href="/" className={`flex items-center gap-2 ${className}`}>
-      <Brain className="h-6 w-6 text-primary" />
-      <span className="text-xl font-bold">MindWell</span>
+      <img src="/white-logo.png" alt="" className="hidden dark:block w-25" />
+      <img src="/black-logo.png" alt="" className="dark:hidden w-25" />
     </Link>
   )
 }
