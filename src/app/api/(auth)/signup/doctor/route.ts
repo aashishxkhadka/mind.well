@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
       address,
       phone,
       avatar,
+      isDoctor:true,
     },
   });
 
