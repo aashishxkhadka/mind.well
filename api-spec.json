@@ -1,0 +1,169 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Mental Health Platform API",
+      "version": "1.0.0"
+    },
+    "schemes": ["https"],
+    "paths": {
+      "/api/login": {
+        "post": {
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Login successful"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      },
+      "/api/signup": {
+        "post": {
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Signup successful"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      },
+      "/api/signup/doctor": {
+        "post": {
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Doctor signup successful"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      },
+      "/api/appointment": {
+        "post": {
+          "produces": ["application/json"],
+          "responses": {
+            "201": {
+              "description": "Appointment created"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      },
+      "/api/appointment/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Get appointment by ID"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      },
+      "/api/post": {
+        "post": {
+          "produces": ["application/json"],
+          "responses": {
+            "201": {
+              "description": "Post created"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        },
+        "get": {
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Get all posts"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      },
+      "/api/post/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Get post by ID"
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "type": "aws_proxy",
+            "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:213017618658:function:mindwell/invocations",
+            "httpMethod": "POST",
+            "credentials": "arn:aws:iam::213017618658:role/LabRole",
+            "passthroughBehavior": "when_no_match",
+            "contentHandling": "CONVERT_TO_TEXT"
+          }
+        }
+      }
+    }
+  }
+  
