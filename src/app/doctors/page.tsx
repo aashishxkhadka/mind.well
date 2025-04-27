@@ -49,12 +49,12 @@ export default function DoctorsPage() {
 
         {/* Results count */}
         <div className="text-sm text-muted-foreground">
-          Showing <span className="font-medium">{doctors.length}</span> professionals
+          Showing <span className="font-medium">{doctors?.length}</span> professionals
         </div>
 
         {/* Doctors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {doctors.map((doctor:any) => (
+          {doctors?.map((doctor:any) => (
             <Card key={doctor.id} className="overflow-hidden bg-muted/10 ">
               <CardContent className="p-5">
                 <div className="flex flex-col items-center">
