@@ -15,6 +15,22 @@
   "headers": [],
   "dynamicRoutes": [
     {
+      "page": "/api/admin/admins/[id]",
+      "regex": "^/api/admin/admins/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/admins/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/admin/users/[id]",
+      "regex": "^/api/admin/users/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/users/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/api/appointment/[doctorId]",
       "regex": "^/api/appointment/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -75,6 +91,42 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/admins",
+      "regex": "^/admin/admins(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/admins(?:/)?$"
+    },
+    {
+      "page": "/admin/dashboard",
+      "regex": "^/admin/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dashboard(?:/)?$"
+    },
+    {
+      "page": "/admin/doctors",
+      "regex": "^/admin/doctors(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/doctors(?:/)?$"
+    },
+    {
+      "page": "/admin/posts",
+      "regex": "^/admin/posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/posts(?:/)?$"
+    },
+    {
+      "page": "/admin/users",
+      "regex": "^/admin/users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users(?:/)?$"
+    },
+    {
       "page": "/appointment",
       "regex": "^/appointment(?:/)?$",
       "routeKeys": {},
@@ -117,12 +169,6 @@
       "namedRegex": "^/doctors(?:/)?$"
     },
     {
-      "page": "/favicon.ico",
-      "regex": "^/favicon\\.ico(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/favicon\\.ico(?:/)?$"
-    },
-    {
       "page": "/login",
       "regex": "^/login(?:/)?$",
       "routeKeys": {},
@@ -133,6 +179,12 @@
       "regex": "^/meditation(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/meditation(?:/)?$"
+    },
+    {
+      "page": "/mindwell-admin",
+      "regex": "^/mindwell\\-admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mindwell\\-admin(?:/)?$"
     },
     {
       "page": "/mission",

@@ -2,6 +2,6 @@
   "headers": {
     "x-nextjs-stale-time": "4294967294",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/terms/layout,_N_T_/terms/page,_N_T_/terms"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(user)/layout,_N_T_/(user)/terms/layout,_N_T_/(user)/terms/page,_N_T_/terms"
   }
 }

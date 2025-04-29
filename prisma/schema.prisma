@@ -86,3 +86,19 @@ model Appointment {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
 }
+
+enum AdminRole {
+  SUPERADMIN
+  ADMIN
+}
+
+model Admin{
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  name String
+  role AdminRole @default(ADMIN)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+}
