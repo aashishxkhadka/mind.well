@@ -1,0 +1,19 @@
+{
+  "pages": {
+    "/admin/page": [
+      "static/chunks/32a9e_next_dist_8bfaaeec._.js",
+      "static/chunks/32a9e_next_dist_client_components_not-found-error_e0c3d4b4.js",
+      "static/chunks/[root-of-the-server]__fdac11e8._.js",
+      "static/chunks/node_modules__pnpm_98ef9d31._.js",
+      "static/chunks/[root-of-the-server]__9a168d68._.css",
+      "static/chunks/src_app_admin_layout_tsx_e0c3d4b4._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_60b49885._.js",
+      "static/chunks/32a9e_next_dist_compiled_e64c8dbd._.js",
+      "static/chunks/32a9e_next_dist_client_56a827c2._.js",
+      "static/chunks/32a9e_next_dist_1143052f._.js",
+      "static/chunks/61dca_@swc_helpers_cjs_e27e0aca._.js",
+      "static/chunks/_e69f0d32._.js",
+      "static/chunks/_98bd08c6._.js"
+    ]
+  }
+}
